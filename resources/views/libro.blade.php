@@ -23,7 +23,15 @@
 
 <form action="{{route("libro.search")}}" method="GET">
     <input type="text" name="search" placeholder="Buscar...">
+    <select name="selectColumn">
+        <option name="ISBN" value="ISBN">ISBN</option>
+        <option name="nombre" value="nombre">nombre</option>
+        <option name="aPubli" value="aPubli">aPubli</option>
+        <option name="numPaginas" value="numPaginas">numPaginas</option>
+        <option name="codAutor" value="codAutor">codAutor</option>
+    </select>
     <button type="submit" class="btn btn-success">Buscar</button>
+    <a href="{{route("libro.index")}}" class="btn btn-secondary">Mostrar Todos</a>
 </form>
 
 <table name="libro" class="table">

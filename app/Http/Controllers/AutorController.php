@@ -55,9 +55,14 @@ class AutorController extends Controller
      * @param  \App\Models\autor  $autor
      * @return \Illuminate\Http\Response
      */
-    public function show(autor $autor)
+    public function search(Request $request)
     {
         //
+        $r=$request->search;
+        $c=$request->selectColumn;
+        $autores=autor::where($c,$r)->get();
+
+        return view("autor",compact("autores"));
     }
 
     /**

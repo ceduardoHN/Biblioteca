@@ -58,8 +58,9 @@ class LibroController extends Controller
      */
     public function search(Request $request)
     {
-        $r = $request->get('search');
-        $libros=libro::where("codAutor",$r);
+        $r=$request->search;
+        $c=$request->selectColumn;
+        $libros=libro::where($c,$r)->get();
         $autores=autor::all();
         return view("libro",compact("libros","autores"));
     }

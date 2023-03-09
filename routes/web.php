@@ -43,3 +43,4 @@ Route::post("/autor/store",[AutorController::class,"store"])->name("autor.store"
 Route::get("/autor/editar/{id}",[AutorController::class,"edit"])->name("autor.edit");
 Route::put("/autor/update/{id}",[AutorController::class,"update"])->name("autor.update");
 Route::get("/autor/destroy/{id}",[AutorController::class,"destroy"])->name("autor.destroy");
+Route::get("/autor/search",[AutorController::class,"search"])->name("autor.search");
