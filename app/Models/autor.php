@@ -10,6 +10,7 @@ class autor extends Model
     use HasFactory;
     protected $table="autor";
     protected $primaryKey="codAutor";
+    protected $fillable=["codAutor","nombre","apellido","fechaNacimiento"];
     public $incrementing=false;
     public $timestamps=false;
 }
