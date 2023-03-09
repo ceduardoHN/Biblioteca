@@ -1,0 +1,34 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('autor', function (Blueprint $table) {
+            $table->string("codAutor",5);
+            $table->string("nombre",500);
+            $table->string("apellido",500);
+            $table->string("fechaNacimiento",10);
+            $table->primary("codAutor");
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('autor');
+    }
+};
